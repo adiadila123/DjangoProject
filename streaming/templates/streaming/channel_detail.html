@@ -1,0 +1,15 @@
+<!-- appname/templates/appname/channel_detail.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+    .navbar {
+        background-color: #212529;
+    }
+    </style>
+    <!-- Embed a video using an iframe occupying full space -->
+    <div class="ratio ratio-16x9">
+        <iframe src="{{ channel.video_url }}"  allowfullscreen frameborder="0"></iframe>
+    </div>
+
+{% endblock %}

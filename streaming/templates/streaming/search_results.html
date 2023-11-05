@@ -1,0 +1,25 @@
+<!-- appname/templates/appname/search_results.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+        <div class="container">
+        <div class="row" data-aos="fade-in" data-aos-easing="linear" data-aos-duration="1500">
+            {% for channel in results %}
+            <div class="col-md-3 mb-2">
+                <div class="card result-card">
+                    <a href="{% url 'channel-detail' channel.slug %}">
+                        <img src="{{ channel.image }}" class="card-img-top result-card-image" width="20px" height="200px" alt="{{ channel.name }} Image">
+                    </a>
+                    <div class="card-body bg-dark text-white">
+                        <h5 class="card-title">{{ channel.name }}</h5>
+                        <!-- You can add more information here as needed -->
+                        <a href="{% url 'channel-detail' channel.slug %}" class="btn btn-outline-success">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
